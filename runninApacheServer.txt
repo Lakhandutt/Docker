@@ -1,0 +1,28 @@
+# daemon name is httpd most of the apache images are stored with httpd
+1. $ docker search httpd
+2. $ docker pull httpd
+3. $ docker images # list all images
+4. $docker run -d --name mywebserver httpd:latest # -d for deattached mode which is used for running 
+ container in background 
+# containers not expose port outside by default 
+# port: a web server is running many services for accessing it from outside we need a port to access.
+# ip address is used to reach to the server but port is used to connect the service.
+# httpd service is running on port 80 on the container 
+5. $ docker ps
+# if docker port doesn't give any output it means port is not open/expose
+6. $ docker port <container-id>
+# how we can expose the port outside?
+7. $ docker exec -it <container-id> /bin/bash
+ and after login to the container 
+8. $ cat /etc/*release ==> ps -ef ==> ps -efa # we can see from output httpd deamons are running
+9. $ exit # if we exit from container container is still running because we are running the container
+  in deattached mode.
+
+10. $ docker stop <container-id>
+11. $ docker top <container-id> #list running processes in container  
+12. $ docker rm <container-id>
+# we are going to redeploy because we want to redploy it with option expose port 
+13. $ docker run -d --name mywebserver -p 80:80 httpd:latest # with option port -p 80:80 means host:container
+14. $ docker port mywebserver
+15. $ yum install elinks 
+16. $ ip r l

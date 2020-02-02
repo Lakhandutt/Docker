@@ -1,0 +1,21 @@
+1. $ docker help  # to list all docker commands
+2. $ docker stop --help #to get details related to docker stop command
+3. $ docker version # to check docker version
+4. $ systemctl status docker # to check docker deamon is running or not
+5. $ systemctl start docker # to start docker deamon
+6. $ docker info # to see all the information of docker and system 
+7. $ docer search busybox # to search an docker image
+8. $ docker run -t -i busybox # if we not provide any tag it will take latest one if 
+  image is not present it will automatically pull it from docker hub
+  this will open an interactive terminal in the busybox container after running it
+  -i= intractive
+  -t =tty terminal
+9. $ docker ps # list of running container 
+
+10. $ docker ps -a # to see all the container wheather they are running or not
+11. $ docker images # show all local images 
+12. $ docker run -t -i busybox:2.0 # to pull and run specific version
+13. $ docker start <container-id> # to start the specific container
+14. $ docker exec -it <container-id> /bin/bash or /bin/sh # to run bash or sh in container for commands
+15. $ docker stop <container-id> # for stopping the container
+
